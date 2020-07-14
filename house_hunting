@@ -1,0 +1,18 @@
+# Part A: House hunting
+""" Calculate how long a person can save enough money to pay the portion down payment of his/her dream house with 
+    portion down payment 25% and rate of return 4%.
+:complexity: O(N)
+"""
+annual_salary = int(input("Enter your annual salary: "))
+portion_saved = float(input("Enter the percent of your salary to save, as a decimal: "))
+total_cost = int(input("Enter the cost of your dream home: "))
+current_saving = 0
+r = 0.04
+month = 0
+portion_down_payment = 0.25
+
+while current_saving < total_cost*portion_down_payment:
+    month += 1
+    current_saving += current_saving * r / 12
+    current_saving += annual_salary * portion_saved / 12
+print("Number of months: " + str(month))
